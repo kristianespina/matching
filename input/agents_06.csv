@@ -1,0 +1,41 @@
+﻿TYPE,userID,UserLatitude,UserLongitude,age,gender,famstatus,lang,profession,hobby,sport,travel_distance,age_group,lang_group,agent_experience,agent_location_group,alpha,Exclusive,target_id
+agent_type,101,41.55,-8.76,50,female,married,portoguese,itprofessional,swimming,Martial arts,high,senior,port_spain_group,8,2,1,1,10053
+agent_type,102,41.16,-8.41,55,company,married,spanish,taxidriver,cycling,Watersports,high,senior,port_spain_group,5,0,0,1,10017
+agent_type,103,41.61,-8.7,56,female,single,english,hotelmanager,fitness,Martial arts,high,senior,nonport,8,2,1,0,10150
+agent_type,104,41.57,-8.61,43,female,single,english,retailer,cinema,cycling,medium,midage,nonport,9,0,1,0,10089
+agent_type,105,41.57,-8.61,39,female,single,french,taxidriver,fitness,Martial arts,medium,midage,nonport,4,2,1,0,10028
+agent_type,106,41.3,-8.57,50,male,married,spanish,hotelmanager,swimming,Watersports,high,senior,port_spain_group,9,0,0,1,10120
+agent_type,107,41.3,-8.57,53,female,married,spanish,biker,swimming,dancing,high,senior,port_spain_group,0,2,1,0,10102
+agent_type,108,41.82,-7.31,34,male,married,french,bankmanager,shopping,tennis,medium,midage,nonport,5,1,0,1,10131
+agent_type,109,41.77,-7.61,46,female,married,english,architect,cinema,none,high,senior,nonport,3,0,0,1,10151
+agent_type,110,41.53,-8.62,24,company,single,english,itprofessional,diving,dancing,low,young,nonport,6,0,1,1,10050
+agent_type,111,38.64,-9.11,43,female,married,english,propertymanager,cinema,Martial arts,medium,midage,nonport,0,0,0,0,10061
+agent_type,112,40.53,-7.86,23,female,married,portoguese,bankmanager,meetupsocial,tennis,low,young,port_spain_group,3,2,0,1,10010
+agent_type,113,40.45,-7.57,46,female,single,portoguese,itprofessional,swimming,none,high,senior,port_spain_group,6,0,1,0,10153
+agent_type,114,40.66,-7.91,27,female,married,spanish,bankmanager,fitness,cycling,low,young,port_spain_group,8,1,1,1,10050
+agent_type,115,41.09,-8.29,25,female,single,french,tourismmanager,investing,dancing,low,young,nonport,5,0,0,1,10077
+agent_type,116,41.41,-8.52,54,female,married,french,itprofessional,shopping,motorsport,high,senior,nonport,4,1,1,0,10008
+agent_type,117,41.11,-7.96,56,female,single,english,architect,cinema,motorsport,high,senior,nonport,5,0,0,0,10022
+agent_type,118,41.53,-8.69,57,female,single,french,agriculturemanager,cinema,Canoeing,high,senior,nonport,6,2,1,1,10128
+agent_type,119,40.38,-7.95,21,female,single,french,retailer,diving,none,low,young,nonport,1,1,0,1,10075
+agent_type,120,38.91,-8.99,27,female,married,spanish,bankmanager,carsocial,football,low,young,port_spain_group,4,0,1,1,10137
+agent_type,121,41.34,-8,31,female,married,english,bankmanager,carsocial,tennis,medium,midage,nonport,1,2,1,1,10037
+agent_type,122,40.8,-7.5,36,male,single,spanish,architect,garden,Martial arts,medium,midage,port_spain_group,0,0,1,0,10135
+agent_type,123,40.16,-8.34,28,company,married,english,tourismmanager,diving,Watersports,low,young,nonport,1,2,0,1,10010
+agent_type,124,39.01,-7.37,27,male,married,english,itprofessional,garden,basketball,low,young,nonport,7,0,1,0,10137
+agent_type,125,40.28,-7.81,47,female,single,english,propertymanager,fitness,tennis,high,senior,nonport,1,0,0,1,10126
+agent_type,126,41.58,-7.8,40,female,single,portoguese,hotelmanager,garden,cycling,medium,midage,port_spain_group,2,0,1,0,10012
+agent_type,127,40.9,-8.69,40,male,married,french,itprofessional,investing,Martial arts,medium,midage,nonport,9,0,1,1,10039
+agent_type,128,41.13,-8.69,55,company,single,portoguese,taxidriver,meetupsocial,football,high,senior,port_spain_group,4,0,0,0,10103
+agent_type,129,40.6,-8.4,54,female,single,english,tourismmanager,meetupsocial,none,high,senior,nonport,1,2,0,1,10071
+agent_type,130,39.48,-8.5,42,female,single,english,taxidriver,diving,cycling,medium,midage,nonport,7,2,0,1,10150
+agent_type,131,40.75,-7.56,51,female,single,french,bankmanager,investing,motorsport,high,senior,nonport,6,1,1,0,10075
+agent_type,132,40.39,-7.55,24,female,single,english,bankmanager,swimming,cycling,low,young,nonport,1,0,1,0,10045
+agent_type,133,40.74,-7.55,48,male,married,english,agriculturemanager,cycling,football,high,senior,nonport,6,2,1,0,10089
+agent_type,134,39.64,-7.38,27,female,single,french,agriculturemanager,garden,dancing,low,young,nonport,0,2,1,0,10046
+agent_type,135,40.43,-8.54,44,female,married,spanish,architect,garden,tennis,medium,midage,port_spain_group,5,0,1,1,10034
+agent_type,136,39.25,-7.65,35,female,single,english,bankmanager,investing,basketball,medium,midage,nonport,5,0,1,1,10074
+agent_type,137,41.49,-8.54,38,male,single,french,retailer,swimming,Martial arts,medium,midage,nonport,1,2,1,1,10053
+agent_type,138,41.55,-8.76,50,company,single,english,itprofessional,meetupsocial,none,high,senior,nonport,7,2,0,1,10051
+agent_type,139,41.16,-8.41,36,male,single,spanish,tourismmanager,cycling,tennis,medium,midage,port_spain_group,0,2,0,1,10058
+agent_type,140,41.61,-8.7,47,company,single,french,hotelmanager,diving,tennis,high,senior,nonport,1,2,1,1,10155
