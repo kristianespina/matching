@@ -1,0 +1,117 @@
+#result_ML = MLDecision(int(np.array(dataSetI_u)),int(np.array(dataSetII_u)),final,geo_sim, sem_cousine_sim,sem_hamming,canberra_sim, weighted_sim,  viphamming_sim,  dataSetI, dataSetII)
+#def MLDecision(LeadID, ContaMediaAccount, final, geo_sim, sem_cousine_sim, sem_hamming, canberra_sim, weighted_sim, viphamming_sim, dataSetI, dataSetII):
+def MLDecision2(VectorDataFrame):
+    from keras.models import load_model
+    #model1.save('model512.h5')  # creates a HDF5 file 'my_model.h5'
+    #del model1  # deletes the existing model
+    # returns a compiled model
+    # identical to the previous one
+    model1 = load_model('model512.h5')
+
+    df = pd.DataFrame(VectorDataFrame)
+    print(df.head())
+    featurecolumns = ['LeadID', 'ContaMediaAccount', 'StoryLead', 'StoryAgent', 'SemDistHamming','SemDistCorrel', 'DistVIPHamming', 'WeightSem']
+    X_test=VectorDataFrame[featurecolumns].values
+
+    # itemdict = getItemDict(df['target_id'])
+
+    StoryLeadCode = getItemDict(df['StoryLead'])
+    StoryAgentCode = getItemDict(df['StoryAgent'])
+
+    print(StoryLeadCode)
+    print(StoryAgentCode)
+    leadid = getItemDict(df['LeadID'])
+    agentid = getItemDict(df['ContaMediaAccount'])
+
+    print('new**********************88')
+    #df['StoryLead-Code'] = df['StoryLead']
+    #df['StoryAgent-Code'] = df['StoryAgent']
+
+    df['StoryLead-Code'] = df['StoryLead'].apply(lambda x: getCodeorNone(x, StoryLeadCode))
+    df['StoryAgent-Code'] = df['StoryAgent'].apply(lambda x: getCodeorNone(x, StoryAgentCode))
+
+
+    print(StoryLeadCode)
+    print(StoryAgentCode)
+    leadid = getItemDict(df['LeadID'])
+    agentid= getItemDict(df['ContaMediaAccount'])
+
+    print('new**********************88')
+    #df['StoryLead-Code'] = df['StoryLead']
+    #df['StoryAgent-Code'] = df['StoryAgent']
+    #df['StoryLead-Code'] = df['StoryLead'].apply(lambda x: getCodeorNone(x,StoryLeadCode))
+    #df['StoryAgent-Code'] = df['StoryAgent'].apply(lambda x: getCodeorNone(x, StoryAgentCode))
+
+
+    udf = pd.get_dummies(df['LeadID'], prefix='f1')
+    udf = pd.get_dummies(df['ContaMediaAccount'], prefix='f2')
+    udf = pd.get_dummies(df['StoryLead-Code'], prefix='f3')
+    udf = pd.get_dummies(df['StoryAgent-Code'], prefix='f4')
+    udf = pd.get_dummies(df['SemDistHamming'], prefix='f5')
+    udf = pd.get_dummies(df['SemDistCorrel'], prefix='f6')
+    udf = pd.get_dummies(df['DistVIPHamming'], prefix='f7')
+    udf = pd.get_dummies(df['WeightSem'], prefix='f8')
+
+    X_test = np.asarray(udf)
+
+    print(X_test)
+    preds = model1.predict_proba(X_test)
+    score_eval = pd.DataFrame({'topN': range(1, 40)})
+    score_eval['error'] = score_eval['topN'].apply(lambda x: getScore(preds, y_test, x))
+    score_eval.plot(x='topN', y='error', kind='scatter')
+    plt.ylim(0, 1)
+
+
+
+
+    #X_train = np.asarray(X_train)
+    #X_test = np.asarray(X_test)
+    #y_train = np.asarray(y_train)
+    #dataSetI, dataSetII, final, geo_sim, sem_cousine_sim, sem_hamming, canberra_sim, weighted_sim, viphamming_sim
+
+
+
+    StoryLeadCode=getItemDict(df['StoryLead'])
+    StoryAgentCode=getItemDict(df['StoryAgent'])
+
+    print(StoryLeadCode)
+    print(StoryAgentCode)
+    leadid = getItemDict(df['LeadID'])
+    agentid= getItemDict(df['ContaMediaAccount'])
+
+    print('new**********************88')
+    df['StoryLead-Code'] = df['StoryLead']
+    df['StoryAgent-Code'] = df['StoryAgent']
+
+    df['StoryLead-Code'] = df['StoryLead'].apply(lambda x: getCodeorNone(x,StoryLeadCode))
+    df['StoryAgent-Code'] = df['StoryAgent'].apply(lambda x: getCodeorNone(x, StoryAgentCode))
+    print(StoryLeadCode)
+    print(StoryAgentCode)
+
+    #Target_Criteria=(df['Final'])
+    Target_Criteria = (df['SupervisionSTAR'])
+    #Target_Criteria_code = getItemDict(df['Final'])
+    #Target_Criteria_code = [float(i) for i in  Target_Criteria]()
+    #Target_Criteria_code = [1+int(min(float(i), 300) /20) for i in Target_Criteria]
+    Target_Criteria_code = [1 + int(min(float(i), 10)/3 ) for i in Target_Criteria]
+    #Target_Criteria_code = [(1 + int(i) / 3) for i in Target_Criteria]
+
+    #print('target')
+    #print((np.array(Target_Criteria_code)))
+    Target_Criteria=pd.DataFrame(Target_Criteria_code)
+    Target_Criteria.to_csv('temp/ml_test.csv', header=True, index=True)
+
+    X_test = np.asarray(dataSetI)
+
+    #y_test = np.asarray(y_test)
+
+    layer1 = [256, 512, 1024, 2048]
+    scores = np.zeros(len(layer1))
+    print('start')
+
+    for n in range(len(layer1)):
+        model = getModel(layer1[n])
+        preds = model.predict_proba(X_test)
+        print(preds)
+        #scores[n] = getScore(preds, y_test, Num)
+        #print(scores[n])
