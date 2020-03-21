@@ -18,8 +18,8 @@ AGENTS_COLLECTION_NAME = "new_agents"
 
 client = pymongo.MongoClient(CONN_STRING)
 db = client.geolocation
-agents = db[LEADS_COLLECTION_NAME]
-leads = db[AGENTS_COLLECTION_NAME]
+agents = db[AGENTS_COLLECTION_NAME]
+leads = db[LEADS_COLLECTION_NAME]
 
 df_agents = pd.read_csv(AGENTS_FILENAME)
 df_agents = df_agents.rename(columns={"alpha.1": "alpha1"})
