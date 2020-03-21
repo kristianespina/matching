@@ -358,7 +358,7 @@ def semantic_logic(inputfileagent, inputfilelead, outputfile):
 
             for j in range(0,len(Subdf_ag.iloc[:,0])):
                 dataSetII = np.array((Subdf_ag.iloc[j,:]))
-                dataSetII_d =np.array(dataSetI_distance.iloc[j,0:2])
+                dataSetII_d =np.array(dataSetII_distance.iloc[j,0:2])
                 dataSetII_u = Subdf_lead_ag.iloc[j,0:1]
                 dataSetII_ALPHAAG_action=np.array( dataSetII_ALPHAAG.iloc[j,0:4])
 
